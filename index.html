@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conseil en Création d'Entreprise - LegalReflex</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                        bgLight: '#f2f6fc',
+                        darkGray: '#1f2937',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            will-change: opacity, visibility;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+        .step-card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-700 antialiased bg-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-bold text-primary">LegalReflex</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#services" class="hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Services</a>
+                        <a href="#formulaire" class="hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">L'Analyse IA</a>
+                        <a href="#process" class="hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Comment ça marche</a>
+                        <a href="#about" class="hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">À propos</a>
+                        <a href="#blog" class="hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Blog</a>
+                        <a href="https://societejuridique.lovable.app/" class="bg-primary text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-secondary transition-colors shadow-lg shadow-blue-500/30">Analyser mon projet</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-bgLight">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto fade-in-section">
+                <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl mb-6">
+                    Trouvez la forme juridique idéale pour votre entreprise <span class="text-primary">– en quelques minutes</span>
+                </h1>
+                <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-500 mb-10">
+                    Un accompagnement intelligent basé sur votre situation : activité, chiffre d’affaires, objectifs, pays, associés…
+                </p>
+                <div class="flex justify-center gap-4">
+                    <a href="https://societejuridique.lovable.app/" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-full text-white bg-primary hover:bg-secondary md:py-4 md:text-lg md:px-10 transition-all shadow-xl shadow-blue-500/30 hover:shadow-2xl hover:-translate-y-1">
+                        Analyser mon projet
+                        <svg class="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Illustration Placeholder -->
+            <div class="mt-16 relative max-w-5xl mx-auto fade-in-section delay-200">
+                <div class="bg-white rounded-2xl shadow-2xl border border-gray-100 p-4 md:p-8 flex flex-col md:flex-row items-center gap-8">
+                    <div class="flex-1 space-y-4">
+                        <div class="h-4 bg-gray-100 rounded w-3/4"></div>
+                        <div class="h-4 bg-gray-100 rounded w-1/2"></div>
+                        <div class="h-4 bg-gray-100 rounded w-5/6"></div>
+                        <div class="flex gap-2 mt-4">
+                            <div class="h-8 w-24 bg-blue-100 rounded-full"></div>
+                            <div class="h-8 w-24 bg-green-100 rounded-full"></div>
+                        </div>
+                    </div>
+                    <div class="flex-1 flex justify-center">
+                        <div class="w-32 h-32 bg-blue-50 rounded-full flex items-center justify-center text-6xl">
+                            🤖
+                        </div>
+                    </div>
+                </div>
+                <!-- Decorative blobs -->
+                <div class="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+                <div class="absolute top-0 -right-4 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+                <div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-section">
+                <h2 class="text-base text-primary font-semibold tracking-wide uppercase">Expertise</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Pourquoi se lancer accompagné ?
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl transition-shadow fade-in-section">
+                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-primary mb-6 text-2xl">
+                        📊
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Analyse personnalisée</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        L’IA compare Micro, EI, EURL, SASU, SAS, SARL… en temps réel selon vos données spécifiques pour trouver le "fit" parfait.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl transition-shadow fade-in-section delay-100">
+                    <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-green-600 mb-6 text-2xl">
+                        💰
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Estimations de charges</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Obtenez une vision claire : Salaire ou dividendes ? Charges TNS ou assimilé salarié ? Impact du régime micro-social ?
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl transition-shadow fade-in-section delay-200">
+                    <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 mb-6 text-2xl">
+                        🎯
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Conseils adaptés</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Des recommandations alignées avec vos objectifs de vie : croissance rapide, protection du patrimoine, image de marque ou optimisation fiscale.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Smart Form Section -->
+    <section id="formulaire" class="py-20 bg-darkGray text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div class="mb-12 lg:mb-0 fade-in-section">
+                    <h2 class="text-3xl font-extrabold sm:text-4xl mb-6">
+                        Votre projet transformé en <span class="text-blue-400">recommandation claire</span>
+                    </h2>
+                    <p class="text-lg text-gray-300 mb-8">
+                        Le formulaire analyse votre projet sur plusieurs critères essentiels pour ne rien laisser au hasard.
+                    </p>
+                    
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center">
+                            <svg class="h-6 w-6 text-blue-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Type d’activité & Chiffre d’affaires prévisionnel
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="h-6 w-6 text-blue-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Nombre d’associés & Pays de résidence
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="h-6 w-6 text-blue-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Objectifs (protection, fiscalité, rapidité…)
+                        </li>
+                    </ul>
+
+                    <a href="https://societejuridique.lovable.app/" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-darkGray bg-white hover:bg-gray-100 transition-colors">
+                        Tester gratuitement
+                        <svg class="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                </div>
+
+                <div class="relative fade-in-section delay-200">
+                    <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 shadow-2xl">
+                        <h3 class="text-xl font-bold mb-6 border-b border-gray-700 pb-4">Ce que vous recevez en quelques secondes :</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full bg-green-500 text-white text-xs font-bold mr-3">✓</span>
+                                <span class="text-gray-300">2 à 3 statuts juridiques adaptés à votre profil</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full bg-green-500 text-white text-xs font-bold mr-3">✓</span>
+                                <span class="text-gray-300">Une estimation précise des charges sociales</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full bg-green-500 text-white text-xs font-bold mr-3">✓</span>
+                                <span class="text-gray-300">Une comparaison détaillée salaire vs dividendes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full bg-green-500 text-white text-xs font-bold mr-3">✓</span>
+                                <span class="text-gray-300">Une recommandation finale claire et actionnable</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full bg-green-500 text-white text-xs font-bold mr-3">✓</span>
+                                <span class="text-gray-300">Un email structuré et pédagogique pour garder une trace</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-20 bg-bgLight">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-section">
+                <h2 class="text-3xl font-extrabold text-gray-900">Comment ça fonctionne ?</h2>
+                <p class="mt-4 text-lg text-gray-500">Une démarche simple en 4 étapes</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="step-card bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center fade-in-section">
+                    <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">1</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Remplissez le formulaire</h3>
+                    <p class="text-sm text-gray-500">Indiquez vos critères et objectifs en quelques clics.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-card bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center fade-in-section delay-100">
+                    <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">2</div>
+                    <h3 class="font-bold text-gray-900 mb-2">L’IA analyse</h3>
+                    <p class="text-sm text-gray-500">Notre algorithme croise vos données avec les règles juridiques.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-card bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center fade-in-section delay-200">
+                    <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">3</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Calculs instantanés</h3>
+                    <p class="text-sm text-gray-500">Charges, statuts, fiscalité : tout est calculé pour vous.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="step-card bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center fade-in-section delay-300">
+                    <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">4</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Recevez votre plan</h3>
+                    <p class="text-sm text-gray-500">Un rapport personnalisé directement dans votre boîte mail.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in-section">
+            <div class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-6 overflow-hidden">
+                <!-- Placeholder for Camille Cocly's photo -->
+                <img src="https://ui-avatars.com/api/?name=Camille+Cocly&background=2563eb&color=fff&size=128" alt="Camille Cocly" class="w-full h-full object-cover">
+            </div>
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Qui suis-je ?</h2>
+            <blockquote class="text-xl text-gray-600 italic leading-relaxed">
+                "Je m’appelle <span class="font-bold text-primary not-italic">Camille Cocly</span>, docteur spécialisé en droit privé.
+                J’accompagne les entrepreneurs dans la création d’entreprise en leur donnant des conseils simples, clairs et adaptés à leur situation réelle.
+                Mon objectif : rendre la création d’entreprise accessible et compréhensible, sans jargon technique."
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-bgLight">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12 fade-in-section">Ils ont lancé leur entreprise</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm fade-in-section">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">★★★★★</div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"J'étais perdu entre SASU et EURL. L'analyse m'a permis de comprendre l'impact fiscal réel sur mes revenus. Merci Michael !"</p>
+                    <div class="font-bold text-gray-900">– Thomas L., Consultant IT</div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm fade-in-section delay-100">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">★★★★★</div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Simple, rapide et efficace. J'ai reçu mon comparatif en 2 minutes et j'ai pu prendre ma décision sereinement."</p>
+                    <div class="font-bold text-gray-900">– Sarah B., E-commerçante</div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm fade-in-section delay-200">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">★★★★★</div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Enfin des explications claires sans jargon incompréhensible. Le formulaire est très bien fait."</p>
+                    <div class="font-bold text-gray-900">– Karim M., Freelance Marketing</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-section">
+                <h2 class="text-base text-primary font-semibold tracking-wide uppercase">Actualités & Conseils</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Le Guide de l'Entrepreneur
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Tout ce qu'il faut savoir sur les statuts juridiques pour faire le bon choix.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Article 1: SAS -->
+                <a href="article-sas.html" class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow fade-in-section group cursor-pointer block">
+                    <div class="h-48 bg-blue-600 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800 opacity-90"></div>
+                        <div class="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold opacity-20 group-hover:scale-110 transition-transform duration-500">SAS</div>
+                        <div class="absolute bottom-4 left-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-white">Société</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">SAS & SASU : Le guide complet 2025</h3>
+                        <p class="text-sm text-gray-600 mb-4 line-clamp-3">
+                            Flexibilité statutaire, dividendes, protection sociale du président... Découvrez pourquoi la SAS est la forme préférée des startups.
+                        </p>
+                        <span class="text-primary text-sm font-semibold flex items-center">
+                            Lire l'article
+                            <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Article 2: SARL -->
+                <a href="article-sarl.html" class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow fade-in-section delay-100 group cursor-pointer block">
+                    <div class="h-48 bg-indigo-600 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-indigo-600 to-indigo-800 opacity-90"></div>
+                        <div class="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold opacity-20 group-hover:scale-110 transition-transform duration-500">SARL</div>
+                        <div class="absolute bottom-4 left-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-white">Famille</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">La SARL est-elle encore pertinente ?</h3>
+                        <p class="text-sm text-gray-600 mb-4 line-clamp-3">
+                            Idéale pour les projets familiaux et la sécurité juridique. Analyse des avantages et inconvénients face à la SAS.
+                        </p>
+                        <span class="text-primary text-sm font-semibold flex items-center">
+                            Lire l'article
+                            <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Article 3: EI -->
+                <a href="article-ei.html" class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow fade-in-section delay-200 group cursor-pointer block">
+                    <div class="h-48 bg-teal-600 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-teal-600 to-teal-800 opacity-90"></div>
+                        <div class="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold opacity-20 group-hover:scale-110 transition-transform duration-500">EI</div>
+                        <div class="absolute bottom-4 left-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-white">Indépendant</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">L'Entreprise Individuelle nouvelle génération</h3>
+                        <p class="text-sm text-gray-600 mb-4 line-clamp-3">
+                            Depuis la réforme, votre patrimoine personnel est automatiquement protégé. Faut-il choisir l'EI ou créer une société ?
+                        </p>
+                        <span class="text-primary text-sm font-semibold flex items-center">
+                            Lire l'article
+                            <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Article 4: Auto-entrepreneur -->
+                <a href="article-auto.html" class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow fade-in-section delay-300 group cursor-pointer block">
+                    <div class="h-48 bg-orange-500 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-orange-500 to-orange-700 opacity-90"></div>
+                        <div class="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold opacity-20 group-hover:scale-110 transition-transform duration-500">Micro</div>
+                        <div class="absolute bottom-4 left-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-white">Freelance</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">Auto-entrepreneur : Se lancer sans risque</h3>
+                        <p class="text-sm text-gray-600 mb-4 line-clamp-3">
+                            Plafonds de chiffre d'affaires, charges sociales simplifiées, versement libératoire... Tout pour bien démarrer.
+                        </p>
+                        <span class="text-primary text-sm font-semibold flex items-center">
+                            Lire l'article
+                            <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darkGray text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-4">LegalReflex</h3>
+                    <p class="text-sm text-gray-400">Conseil en création d'entreprise et stratégie juridique.</p>
+                </div>
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li><a href="mailto:contact@legalreflex.fr" class="hover:text-white transition-colors">contact@legalreflex.fr</a></li>
+                        <li><a href="https://calendly.com/michaeldia231116/45min" class="hover:text-white transition-colors">Prendre RDV (Calendly)</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-4">Légal</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Mentions légales</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Politique de confidentialité</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">CGU</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-500">
+                &copy; 2025 LegalReflex. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for fade-in animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in-section').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
