@@ -794,5 +794,145 @@
             });
         });
     </script>
+    <!-- Chatbot Widget -->
+    <div id="chatbot-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end font-sans">
+        <!-- Chat Window (Hidden) -->
+        <div id="chat-window" class="hidden bg-white w-80 h-96 rounded-2xl shadow-2xl border border-gray-200 flex flex-col mb-4 overflow-hidden transition-all transform origin-bottom-right scale-95 opacity-0">
+            <!-- Header -->
+            <div class="bg-primary p-4 text-white flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                    <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                    <span class="font-bold">Assistant LegalReflex</span>
+                </div>
+                <button id="close-chat" class="hover:bg-white/20 rounded-full p-1 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            
+            <!-- Messages Area -->
+            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-gray-50 space-y-3">
+                <!-- Welcome Message -->
+                <div class="flex items-start gap-2">
+                    <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-xs flex-shrink-0">🤖</div>
+                    <div class="bg-white p-3 rounded-r-xl rounded-bl-xl shadow-sm text-sm text-gray-700 max-w-[85%]">
+                        Bonjour ! Je suis l'assistant virtuel de LegalReflex. Posez-moi vos questions sur la création d'entreprise (SAS, SARL, Auto-entrepreneur...).
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <form id="chat-form" class="p-3 bg-white border-t border-gray-100 flex gap-2">
+                <input type="text" id="chat-input" class="flex-1 bg-gray-100 border-0 rounded-full px-4 py-2 text-sm focus:ring-2 focus:ring-primary outline-none" placeholder="Votre question...">
+                <button type="submit" class="bg-primary text-white p-2 rounded-full hover:bg-secondary transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                </button>
+            </form>
+        </div>
+
+        <!-- Toggle Button -->
+        <button id="toggle-chat" class="bg-primary hover:bg-secondary text-white p-4 rounded-full shadow-lg transition-all hover:scale-110 flex items-center justify-center group">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+            <span class="absolute right-full mr-3 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Besoin d'aide ?</span>
+        </button>
+    </div>
+
+    <script>
+        // Chatbot Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleChat = document.getElementById('toggle-chat');
+            const closeChat = document.getElementById('close-chat');
+            const chatWindow = document.getElementById('chat-window');
+            const chatForm = document.getElementById('chat-form');
+            const chatInput = document.getElementById('chat-input');
+            const chatMessages = document.getElementById('chat-messages');
+
+            function toggleVisibility() {
+                chatWindow.classList.toggle('hidden');
+                if (!chatWindow.classList.contains('hidden')) {
+                    setTimeout(() => {
+                        chatWindow.classList.remove('scale-95', 'opacity-0');
+                        chatWindow.classList.add('scale-100', 'opacity-100');
+                        chatInput.focus();
+                    }, 10);
+                } else {
+                    chatWindow.classList.add('scale-95', 'opacity-0');
+                    chatWindow.classList.remove('scale-100', 'opacity-100');
+                }
+            }
+
+            toggleChat.addEventListener('click', toggleVisibility);
+            closeChat.addEventListener('click', toggleVisibility);
+
+            function addMessage(text, isUser) {
+                const div = document.createElement('div');
+                div.className = isUser ? 'flex items-end justify-end gap-2' : 'flex items-start gap-2';
+                
+                const bubble = document.createElement('div');
+                bubble.className = isUser 
+                    ? 'bg-primary text-white p-3 rounded-l-xl rounded-br-xl shadow-sm text-sm max-w-[85%]' 
+                    : 'bg-white p-3 rounded-r-xl rounded-bl-xl shadow-sm text-sm text-gray-700 max-w-[85%]';
+                bubble.textContent = text;
+
+                if (!isUser) {
+                    const icon = document.createElement('div');
+                    icon.className = 'w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-xs flex-shrink-0';
+                    icon.textContent = '🤖';
+                    div.appendChild(icon);
+                    div.appendChild(bubble);
+                } else {
+                    div.appendChild(bubble);
+                }
+
+                chatMessages.appendChild(div);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            function getBotResponse(input) {
+                const lowerInput = input.toLowerCase();
+                
+                if (lowerInput.includes('bonjour') || lowerInput.includes('salut') || lowerInput.includes('hello')) {
+                    return "Bonjour ! Comment puis-je vous aider dans votre projet de création d'entreprise ?";
+                }
+                if (lowerInput.includes('sas') || lowerInput.includes('sasu')) {
+                    return "La SAS/SASU est idéale pour la flexibilité et si vous voulez être assimilé salarié. C'est souvent le choix des startups pour faciliter l'entrée d'investisseurs.";
+                }
+                if (lowerInput.includes('sarl') || lowerInput.includes('eurl')) {
+                    return "La SARL/EURL est parfaite pour les projets familiaux et pour payer moins de charges sociales (statut TNS). C'est un cadre très sécurisant.";
+                }
+                if (lowerInput.includes('auto') || lowerInput.includes('micro')) {
+                    return "L'auto-entreprise est le régime le plus simple : pas de CA = pas de charges. Attention aux plafonds de chiffre d'affaires (environ 77k€ pour les services) !";
+                }
+                if (lowerInput.includes('ei') || lowerInput.includes('individuelle')) {
+                    return "L'Entreprise Individuelle (EI) protège désormais votre patrimoine personnel automatiquement. C'est une bonne alternative à la société pour les solos.";
+                }
+                if (lowerInput.includes('cout') || lowerInput.includes('prix') || lowerInput.includes('tarif')) {
+                    return "Le coût de création dépend du statut. Comptez 0€ pour une micro-entreprise, et entre 200€ et 1000€ pour une société (frais de greffe + annonce légale + rédaction statuts).";
+                }
+                if (lowerInput.includes('formulaire') || lowerInput.includes('test')) {
+                    return "Vous pouvez utiliser notre formulaire intelligent en haut de page pour trouver le statut idéal en quelques clics !";
+                }
+                if (lowerInput.includes('contact') || lowerInput.includes('rdv') || lowerInput.includes('rendez-vous')) {
+                    return "Vous pouvez prendre rendez-vous directement via le lien Calendly en bas de page ou nous écrire à contact@legalreflex.fr.";
+                }
+                
+                return "Je ne suis pas sûr de comprendre. Essayez de me poser une question sur les statuts (SAS, SARL, Micro), les coûts ou les démarches.";
+            }
+
+            chatForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const message = chatInput.value.trim();
+                if (!message) return;
+
+                addMessage(message, true);
+                chatInput.value = '';
+
+                // Simulate typing delay
+                setTimeout(() => {
+                    const response = getBotResponse(message);
+                    addMessage(response, false);
+                }, 500 + Math.random() * 500);
+            });
+        });
+    </script>
 </body>
 </html>
