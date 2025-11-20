@@ -147,67 +147,262 @@
     </section>
 
     <!-- Smart Form Section -->
-    <section id="formulaire" class="py-20 bg-darkGray text-white overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
-                <div class="mb-12 lg:mb-0 fade-in-section">
-                    <h2 class="text-3xl font-extrabold sm:text-4xl mb-6">
-                        Votre projet transformé en <span class="text-blue-400">recommandation claire</span>
-                    </h2>
-                    <p class="text-lg text-gray-300 mb-8">
-                        Le formulaire analyse votre projet sur plusieurs critères essentiels pour ne rien laisser au hasard.
-                    </p>
+    <section id="formulaire" class="py-20 bg-darkGray text-white overflow-hidden relative">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <!-- Header -->
+            <div class="text-center mb-10 fade-in-section">
+                <h2 class="text-3xl font-extrabold sm:text-4xl mb-4">
+                    Trouvez votre forme juridique idéale
+                </h2>
+                <p class="text-lg text-gray-300">
+                    Répondez à quelques questions pour obtenir une recommandation personnalisée.
+                </p>
+            </div>
+
+            <!-- Form Container -->
+            <div class="bg-gray-800 rounded-2xl shadow-2xl border border-gray-700 overflow-hidden fade-in-section delay-100">
+                
+                <!-- Progress Bar -->
+                <div class="bg-gray-700 h-2 w-full">
+                    <div id="progress-bar" class="bg-blue-500 h-full transition-all duration-500 ease-out" style="width: 25%"></div>
+                </div>
+
+                <form id="legal-form" class="p-8 md:p-10" onsubmit="return false;">
                     
-                    <ul class="space-y-4 mb-10">
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-blue-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Type d’activité & Chiffre d’affaires prévisionnel
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-blue-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Nombre d’associés & Pays de résidence
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-blue-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Objectifs (protection, fiscalité, rapidité…)
-                        </li>
-                    </ul>
-
-                    <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-darkGray bg-white hover:bg-gray-100 transition-colors">
-                        Tester gratuitement
-                        <svg class="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                    </a>
-                </div>
-
-                <div class="relative fade-in-section delay-200">
-                    <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 shadow-2xl">
-                        <h3 class="text-xl font-bold mb-6 border-b border-gray-700 pb-4">Ce que vous recevez en quelques secondes :</h3>
-                        <ul class="space-y-4">
-                            <li class="flex items-start">
-                                <span class="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full bg-green-500 text-white text-xs font-bold mr-3">✓</span>
-                                <span class="text-gray-300">2 à 3 statuts juridiques adaptés à votre profil</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full bg-green-500 text-white text-xs font-bold mr-3">✓</span>
-                                <span class="text-gray-300">Une estimation précise des charges sociales</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full bg-green-500 text-white text-xs font-bold mr-3">✓</span>
-                                <span class="text-gray-300">Une comparaison détaillée salaire vs dividendes</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full bg-green-500 text-white text-xs font-bold mr-3">✓</span>
-                                <span class="text-gray-300">Une recommandation finale claire et actionnable</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full bg-green-500 text-white text-xs font-bold mr-3">✓</span>
-                                <span class="text-gray-300">Un email structuré et pédagogique pour garder une trace</span>
-                            </li>
-                        </ul>
+                    <!-- Step 1: Identité -->
+                    <div class="form-step" data-step="1">
+                        <h3 class="text-xl font-bold mb-6 text-white">Commençons par votre identité</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2">Nom</label>
+                                <input type="text" required class="w-full bg-gray-900 border border-gray-600 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" placeholder="Votre nom">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2">Prénom</label>
+                                <input type="text" required class="w-full bg-gray-900 border border-gray-600 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" placeholder="Votre prénom">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-sm font-medium text-gray-400 mb-2">Email</label>
+                                <input type="email" required class="w-full bg-gray-900 border border-gray-600 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" placeholder="votre@email.com">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-sm font-medium text-gray-400 mb-2">Pays de résidence</label>
+                                <select class="w-full bg-gray-900 border border-gray-600 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all">
+                                    <option value="FR">France</option>
+                                    <option value="BE">Belgique</option>
+                                    <option value="CH">Suisse</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="OTHER">Autre</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
-                </div>
+
+                    <!-- Step 2: Activité -->
+                    <div class="form-step hidden" data-step="2">
+                        <h3 class="text-xl font-bold mb-6 text-white">Votre activité</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2">Nature de l'activité</label>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="activity_type" value="commercial" class="peer sr-only" checked>
+                                        <div class="p-4 rounded-lg border border-gray-600 bg-gray-900 peer-checked:border-blue-500 peer-checked:bg-blue-900/20 transition-all hover:bg-gray-800 text-center">
+                                            <span class="block text-2xl mb-2">🏪</span>
+                                            <span class="font-medium">Commerciale</span>
+                                        </div>
+                                    </label>
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="activity_type" value="artisan" class="peer sr-only">
+                                        <div class="p-4 rounded-lg border border-gray-600 bg-gray-900 peer-checked:border-blue-500 peer-checked:bg-blue-900/20 transition-all hover:bg-gray-800 text-center">
+                                            <span class="block text-2xl mb-2">🔨</span>
+                                            <span class="font-medium">Artisanale</span>
+                                        </div>
+                                    </label>
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="activity_type" value="liberal" class="peer sr-only">
+                                        <div class="p-4 rounded-lg border border-gray-600 bg-gray-900 peer-checked:border-blue-500 peer-checked:bg-blue-900/20 transition-all hover:bg-gray-800 text-center">
+                                            <span class="block text-2xl mb-2">💻</span>
+                                            <span class="font-medium">Libérale</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2">Secteur d'activité (précision)</label>
+                                <input type="text" class="w-full bg-gray-900 border border-gray-600 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" placeholder="Ex: Développement web, Boulangerie, E-commerce...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Chiffres -->
+                    <div class="form-step hidden" data-step="3">
+                        <h3 class="text-xl font-bold mb-6 text-white">Vos prévisions financières</h3>
+                        <div class="space-y-8">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2">Chiffre d'affaires annuel estimé</label>
+                                <div class="flex items-center gap-4">
+                                    <input type="range" min="0" max="200000" step="1000" value="30000" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-blue-500" oninput="document.getElementById('ca-display').innerText = parseInt(this.value).toLocaleString('fr-FR') + ' €'">
+                                    <span id="ca-display" class="text-xl font-bold text-blue-400 w-32 text-right">30 000 €</span>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-2">Une estimation approximative suffit pour commencer.</p>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2">Charges estimées (% du CA)</label>
+                                <div class="flex items-center gap-4">
+                                    <input type="range" min="0" max="90" step="5" value="30" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-blue-500" oninput="document.getElementById('charges-display').innerText = this.value + ' %'">
+                                    <span id="charges-display" class="text-xl font-bold text-blue-400 w-32 text-right">30 %</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Configuration -->
+                    <div class="form-step hidden" data-step="4">
+                        <h3 class="text-xl font-bold mb-6 text-white">Configuration du projet</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2">Nombre d'associés</label>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="partners" value="solo" class="peer sr-only" checked>
+                                        <div class="p-4 rounded-lg border border-gray-600 bg-gray-900 peer-checked:border-blue-500 peer-checked:bg-blue-900/20 transition-all hover:bg-gray-800 text-center">
+                                            <span class="block text-2xl mb-2">👤</span>
+                                            <span class="font-medium">Seul(e)</span>
+                                        </div>
+                                    </label>
+                                    <label class="cursor-pointer">
+                                        <input type="radio" name="partners" value="multiple" class="peer sr-only">
+                                        <div class="p-4 rounded-lg border border-gray-600 bg-gray-900 peer-checked:border-blue-500 peer-checked:bg-blue-900/20 transition-all hover:bg-gray-800 text-center">
+                                            <span class="block text-2xl mb-2">👥</span>
+                                            <span class="font-medium">Plusieurs</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2">Votre priorité principale</label>
+                                <select class="w-full bg-gray-900 border border-gray-600 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all">
+                                    <option value="simplicity">Simplicité administrative</option>
+                                    <option value="protection">Protection sociale maximale</option>
+                                    <option value="income">Maximisation du revenu net</option>
+                                    <option value="growth">Croissance et investissement</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Result (Hidden initially) -->
+                    <div id="result-step" class="hidden text-center py-10">
+                        <div id="loading-spinner" class="mb-6">
+                            <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-blue-500 mx-auto"></div>
+                            <p class="mt-4 text-gray-300">Analyse de votre profil en cours...</p>
+                        </div>
+                        <div id="final-result" class="hidden fade-in-section">
+                            <div class="text-5xl mb-4">🎉</div>
+                            <h3 class="text-2xl font-bold text-white mb-2">Recommandation : <span class="text-blue-400">SASU</span></h3>
+                            <p class="text-gray-300 mb-6">Basé sur votre profil (Seul, Commercial, CA > 30k€), la SASU semble être la meilleure option pour optimiser vos dividendes.</p>
+                            <button onclick="location.reload()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-colors">
+                                Recevoir le dossier complet par email
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div id="form-nav" class="flex justify-between mt-8 pt-6 border-t border-gray-700">
+                        <button type="button" id="prev-btn" class="px-6 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-700 transition-colors invisible" onclick="changeStep(-1)">
+                            Précédent
+                        </button>
+                        <button type="button" id="next-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-8 rounded-lg transition-colors shadow-lg shadow-blue-500/30" onclick="changeStep(1)">
+                            Suivant
+                        </button>
+                    </div>
+
+                </form>
             </div>
         </div>
+
+        <!-- Background Elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 opacity-20 pointer-events-none">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+            <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+        </div>
+
+        <script>
+            let currentStep = 1;
+            const totalSteps = 4;
+
+            function changeStep(direction) {
+                const newStep = currentStep + direction;
+                
+                // Validation logic could go here
+                if (direction > 0) {
+                    const currentStepEl = document.querySelector(`.form-step[data-step="${currentStep}"]`);
+                    const inputs = currentStepEl.querySelectorAll('input[required], select[required]');
+                    let valid = true;
+                    inputs.forEach(input => {
+                        if (!input.value) {
+                            valid = false;
+                            input.classList.add('border-red-500');
+                        } else {
+                            input.classList.remove('border-red-500');
+                        }
+                    });
+                    if (!valid) return;
+                }
+
+                if (newStep > totalSteps) {
+                    showResult();
+                    return;
+                }
+
+                if (newStep < 1) return;
+
+                // Hide current step
+                document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.add('hidden');
+                
+                // Show new step
+                document.querySelector(`.form-step[data-step="${newStep}"]`).classList.remove('hidden');
+                
+                currentStep = newStep;
+                updateUI();
+            }
+
+            function updateUI() {
+                // Update Progress Bar
+                const progress = (currentStep / totalSteps) * 100;
+                document.getElementById('progress-bar').style.width = `${progress}%`;
+
+                // Update Buttons
+                const prevBtn = document.getElementById('prev-btn');
+                const nextBtn = document.getElementById('next-btn');
+
+                if (currentStep === 1) {
+                    prevBtn.classList.add('invisible');
+                } else {
+                    prevBtn.classList.remove('invisible');
+                }
+
+                if (currentStep === totalSteps) {
+                    nextBtn.innerText = "Analyser mon projet";
+                } else {
+                    nextBtn.innerText = "Suivant";
+                }
+            }
+
+            function showResult() {
+                document.getElementById('form-nav').classList.add('hidden');
+                document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.add('hidden');
+                document.getElementById('result-step').classList.remove('hidden');
+                
+                // Simulate loading
+                setTimeout(() => {
+                    document.getElementById('loading-spinner').classList.add('hidden');
+                    document.getElementById('final-result').classList.remove('hidden');
+                }, 2000);
+            }
+        </script>
     </section>
 
     <!-- Process Section -->
