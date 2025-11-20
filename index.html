@@ -81,21 +81,147 @@
                 </div>
             </div>
             
-            <!-- Illustration Placeholder -->
-            <div class="mt-16 relative max-w-5xl mx-auto fade-in-section delay-200">
-                <div class="relative rounded-2xl shadow-2xl overflow-hidden">
-                    <img src="https://images.pexels.com/photos/3727459/pexels-photo-3727459.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Consultante travaillant sur un projet" class="w-full h-auto object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                    <div class="absolute bottom-8 left-8 text-white">
-                        <p class="text-lg font-semibold">Accompagnement sur-mesure</p>
-                        <p class="text-sm opacity-90">Pour chaque étape de votre projet</p>
+            <!-- Carousel Section -->
+            <div class="mt-12 relative max-w-4xl mx-auto fade-in-section delay-200">
+                <div class="relative rounded-2xl shadow-2xl overflow-hidden h-64 md:h-96 group">
+                    <!-- Slides Container -->
+                    <div id="carousel-track" class="flex transition-transform duration-500 ease-out h-full">
+                        <!-- Slide 1: Consulting -->
+                        <div class="w-full flex-shrink-0 relative h-full">
+                            <img src="https://images.pexels.com/photos/3727459/pexels-photo-3727459.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Consulting" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 text-white">
+                                <p class="text-xl font-bold">Consulting & Services</p>
+                                <p class="text-sm opacity-90">Des solutions pour les experts</p>
+                            </div>
+                        </div>
+                        <!-- Slide 2: BTP -->
+                        <div class="w-full flex-shrink-0 relative h-full">
+                            <img src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800" alt="BTP Construction" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 text-white">
+                                <p class="text-xl font-bold">BTP & Construction</p>
+                                <p class="text-sm opacity-90">Sécurisez vos chantiers et votre patrimoine</p>
+                            </div>
+                        </div>
+                        <!-- Slide 3: Artisanat -->
+                        <div class="w-full flex-shrink-0 relative h-full">
+                            <img src="https://images.pexels.com/photos/3218467/pexels-photo-3218467.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Artisanat" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 text-white">
+                                <p class="text-xl font-bold">Artisanat</p>
+                                <p class="text-sm opacity-90">Le statut idéal pour votre savoir-faire</p>
+                            </div>
+                        </div>
+                        <!-- Slide 4: Freelance -->
+                        <div class="w-full flex-shrink-0 relative h-full">
+                            <img src="https://images.pexels.com/photos/3194518/pexels-photo-3194518.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Freelance Tech" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 text-white">
+                                <p class="text-xl font-bold">Freelance & Tech</p>
+                                <p class="text-sm opacity-90">Liberté et optimisation fiscale</p>
+                            </div>
+                        </div>
+                        <!-- Slide 5: Commerce -->
+                        <div class="w-full flex-shrink-0 relative h-full">
+                            <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Commerce et Équipe" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 text-white">
+                                <p class="text-xl font-bold">Commerce & Startups</p>
+                                <p class="text-sm opacity-90">Structurez votre croissance</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <button id="prev-slide" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-md text-white p-2 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <button id="next-slide" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-md text-white p-2 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                    
+                    <!-- Indicators -->
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2" id="carousel-indicators">
+                        <button class="w-2 h-2 rounded-full bg-white transition-all" data-index="0"></button>
+                        <button class="w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all" data-index="1"></button>
+                        <button class="w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all" data-index="2"></button>
+                        <button class="w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all" data-index="3"></button>
+                        <button class="w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all" data-index="4"></button>
                     </div>
                 </div>
-                <!-- Decorative blobs -->
-                <div class="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob -z-10"></div>
-                <div class="absolute top-0 -right-4 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000 -z-10"></div>
-                <div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000 -z-10"></div>
+                
+                <!-- Decorative blobs (resized) -->
+                <div class="absolute top-0 -left-4 w-48 h-48 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob -z-10"></div>
+                <div class="absolute top-0 -right-4 w-48 h-48 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000 -z-10"></div>
+                <div class="absolute -bottom-8 left-20 w-48 h-48 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000 -z-10"></div>
             </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const track = document.getElementById('carousel-track');
+                    const slides = track.children;
+                    const nextBtn = document.getElementById('next-slide');
+                    const prevBtn = document.getElementById('prev-slide');
+                    const indicators = document.querySelectorAll('#carousel-indicators button');
+                    let currentIndex = 0;
+                    const totalSlides = slides.length;
+                    let autoSlideInterval;
+
+                    function updateCarousel() {
+                        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                        indicators.forEach((dot, index) => {
+                            if (index === currentIndex) {
+                                dot.classList.remove('bg-white/50');
+                                dot.classList.add('bg-white', 'w-4');
+                            } else {
+                                dot.classList.add('bg-white/50');
+                                dot.classList.remove('bg-white', 'w-4');
+                            }
+                        });
+                    }
+
+                    function nextSlide() {
+                        currentIndex = (currentIndex + 1) % totalSlides;
+                        updateCarousel();
+                    }
+
+                    function prevSlide() {
+                        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                        updateCarousel();
+                    }
+
+                    function startAutoSlide() {
+                        stopAutoSlide();
+                        autoSlideInterval = setInterval(nextSlide, 5000);
+                    }
+
+                    function stopAutoSlide() {
+                        clearInterval(autoSlideInterval);
+                    }
+
+                    nextBtn.addEventListener('click', () => {
+                        nextSlide();
+                        startAutoSlide();
+                    });
+
+                    prevBtn.addEventListener('click', () => {
+                        prevSlide();
+                        startAutoSlide();
+                    });
+
+                    indicators.forEach((dot, index) => {
+                        dot.addEventListener('click', () => {
+                            currentIndex = index;
+                            updateCarousel();
+                            startAutoSlide();
+                        });
+                    });
+
+                    // Start
+                    startAutoSlide();
+                });
+            </script>
         </div>
     </section>
 
