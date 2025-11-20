@@ -83,26 +83,18 @@
             
             <!-- Illustration Placeholder -->
             <div class="mt-16 relative max-w-5xl mx-auto fade-in-section delay-200">
-                <div class="bg-white rounded-2xl shadow-2xl border border-gray-100 p-4 md:p-8 flex flex-col md:flex-row items-center gap-8">
-                    <div class="flex-1 space-y-4">
-                        <div class="h-4 bg-gray-100 rounded w-3/4"></div>
-                        <div class="h-4 bg-gray-100 rounded w-1/2"></div>
-                        <div class="h-4 bg-gray-100 rounded w-5/6"></div>
-                        <div class="flex gap-2 mt-4">
-                            <div class="h-8 w-24 bg-blue-100 rounded-full"></div>
-                            <div class="h-8 w-24 bg-green-100 rounded-full"></div>
-                        </div>
-                    </div>
-                    <div class="flex-1 flex justify-center">
-                        <div class="w-32 h-32 bg-blue-50 rounded-full flex items-center justify-center text-6xl">
-                            🤖
-                        </div>
+                <div class="relative rounded-2xl shadow-2xl overflow-hidden">
+                    <img src="https://images.pexels.com/photos/3727459/pexels-photo-3727459.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Consultante travaillant sur un projet" class="w-full h-auto object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                    <div class="absolute bottom-8 left-8 text-white">
+                        <p class="text-lg font-semibold">Accompagnement sur-mesure</p>
+                        <p class="text-sm opacity-90">Pour chaque étape de votre projet</p>
                     </div>
                 </div>
                 <!-- Decorative blobs -->
-                <div class="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-                <div class="absolute top-0 -right-4 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-                <div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+                <div class="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob -z-10"></div>
+                <div class="absolute top-0 -right-4 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000 -z-10"></div>
+                <div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000 -z-10"></div>
             </div>
         </div>
     </section>
@@ -325,10 +317,11 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Article 1: SAS -->
                 <a href="article-sas.html" class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow fade-in-section group cursor-pointer block">
-                    <div class="h-48 bg-blue-600 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800 opacity-90"></div>
-                        <div class="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold opacity-20 group-hover:scale-110 transition-transform duration-500">SAS</div>
-                        <div class="absolute bottom-4 left-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-white">Société</div>
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Équipe en réunion" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-90"></div>
+                        <div class="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold opacity-20 group-hover:opacity-40 transition-opacity duration-500">SAS</div>
+                        <div class="absolute bottom-4 left-4 bg-blue-600 px-3 py-1 rounded-full text-xs font-semibold text-white">Société</div>
                     </div>
                     <div class="p-6">
                         <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">SAS & SASU : Le guide complet 2025</h3>
@@ -344,10 +337,11 @@
 
                 <!-- Article 2: SARL -->
                 <a href="article-sarl.html" class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow fade-in-section delay-100 group cursor-pointer block">
-                    <div class="h-48 bg-indigo-600 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-indigo-600 to-indigo-800 opacity-90"></div>
-                        <div class="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold opacity-20 group-hover:scale-110 transition-transform duration-500">SARL</div>
-                        <div class="absolute bottom-4 left-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-white">Famille</div>
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="https://images.pexels.com/photos/3218467/pexels-photo-3218467.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Artisan au travail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-90"></div>
+                        <div class="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold opacity-20 group-hover:opacity-40 transition-opacity duration-500">SARL</div>
+                        <div class="absolute bottom-4 left-4 bg-indigo-600 px-3 py-1 rounded-full text-xs font-semibold text-white">Famille</div>
                     </div>
                     <div class="p-6">
                         <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">La SARL est-elle encore pertinente ?</h3>
@@ -363,10 +357,11 @@
 
                 <!-- Article 3: EI -->
                 <a href="article-ei.html" class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow fade-in-section delay-200 group cursor-pointer block">
-                    <div class="h-48 bg-teal-600 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-teal-600 to-teal-800 opacity-90"></div>
-                        <div class="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold opacity-20 group-hover:scale-110 transition-transform duration-500">EI</div>
-                        <div class="absolute bottom-4 left-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-white">Indépendant</div>
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Chantier de construction" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-90"></div>
+                        <div class="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold opacity-20 group-hover:opacity-40 transition-opacity duration-500">EI</div>
+                        <div class="absolute bottom-4 left-4 bg-teal-600 px-3 py-1 rounded-full text-xs font-semibold text-white">Indépendant</div>
                     </div>
                     <div class="p-6">
                         <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">L'Entreprise Individuelle nouvelle génération</h3>
@@ -382,10 +377,11 @@
 
                 <!-- Article 4: Auto-entrepreneur -->
                 <a href="article-auto.html" class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow fade-in-section delay-300 group cursor-pointer block">
-                    <div class="h-48 bg-orange-500 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-orange-500 to-orange-700 opacity-90"></div>
-                        <div class="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold opacity-20 group-hover:scale-110 transition-transform duration-500">Micro</div>
-                        <div class="absolute bottom-4 left-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-white">Freelance</div>
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="https://images.pexels.com/photos/3194518/pexels-photo-3194518.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Freelance travaillant sur ordinateur" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-90"></div>
+                        <div class="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold opacity-20 group-hover:opacity-40 transition-opacity duration-500">Micro</div>
+                        <div class="absolute bottom-4 left-4 bg-orange-500 px-3 py-1 rounded-full text-xs font-semibold text-white">Freelance</div>
                     </div>
                     <div class="p-6">
                         <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">Auto-entrepreneur : Se lancer sans risque</h3>
