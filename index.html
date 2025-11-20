@@ -350,11 +350,25 @@
                     const inputs = currentStepEl.querySelectorAll('input[required], select[required]');
                     let valid = true;
                     inputs.forEach(input => {
-                        if (!input.value) {
+                        let isValidInput = true;
+                        if (input.type === 'checkbox') {
+                            isValidInput = input.checked;
+                        } else {
+                            isValidInput = input.value.trim() !== '';
+                        }
+
+                        if (!isValidInput) {
                             valid = false;
                             input.classList.add('border-red-500');
+                            // For checkbox, maybe add a red border to the parent label or something visible
+                            if(input.type === 'checkbox') {
+                                input.parentElement.classList.add('text-red-500');
+                            }
                         } else {
                             input.classList.remove('border-red-500');
+                            if(input.type === 'checkbox') {
+                                input.parentElement.classList.remove('text-red-500');
+                            }
                         }
                     });
                     if (!valid) return;
